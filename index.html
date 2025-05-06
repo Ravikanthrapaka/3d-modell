@@ -18,7 +18,7 @@
     </style>
   </head>
   <body>
-    <!-- 3D AR Model Viewer -->
+    <!-- AR-Enabled 3D Model Viewer -->
     <model-viewer
       id="model-viewer"
       src="https://raw.githubusercontent.com/Ravikanthrapaka/3d-modell/main/g5%20may2555d.glb"
@@ -31,14 +31,15 @@
     </model-viewer>
 
     <script>
+      // Trigger AR mode on interaction
       const modelViewer = document.getElementById('model-viewer');
 
-      // Trigger AR mode when clicked
+      // Listen for when the user clicks the model to enter AR mode
       modelViewer.addEventListener('click', () => {
         if (modelViewer.canActivateAR()) {
           modelViewer.enterAR();
         } else {
-          alert('AR mode is not available on this device or browser.');
+          alert('AR mode is not supported on your device or browser.');
         }
       });
     </script>
